@@ -17,7 +17,7 @@ class SecondPage extends StatelessWidget {
           width: 400,
           height: 200,
           color: Colors.red,
-          child: Text('HELLO'),
+          child:const Text('HELLO'),
         ),
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_app/new_detail.dart';
+import 'package:recipe_app/cons.dart';
 import 'models.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -16,8 +16,11 @@ class MyHomePage extends StatelessWidget {
   ];
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(
+    BuildContext context,
+  ) {
     return Scaffold(
+      drawer: myDrawer(context),
       appBar: AppBar(
         title: const Text(
           'RECIPE APP',
@@ -25,13 +28,11 @@ class MyHomePage extends StatelessWidget {
         ),
         backgroundColor: Colors.grey.shade300,
       ),
-      body: ListView(
-        children: [
-          myCard(list[0], context),
-          myCard(list[1], context),
-          myCard(list[2], context),
-          myCard(list[3], context),
-        ],
+      body: ListView.builder(
+        itemCount: list.length,
+        itemBuilder: (BuildContext context, int index) {
+          return myCard(list[index], context);
+        },
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
@@ -53,15 +54,39 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-Widget myCard(RECIPE recipe, BuildContext context) {
+Widget myDrawer(BuildContext context) {
+  return Drawer(
+    child: ListView(
+      padding: EdgeInsets.zero,
+      children: [
+        DrawerHeader(
+          decoration: BoxDecoration(color: Colors.blue.shade100),
+          child: const Text('MENU'),
+        ),
+        ListTile(
+          title: Text('My Account'),
+          leading: Icon(Icons.person),
+        ),
+        ListTile(
+          title: Text("Create a group"),
+          leading: Icon(Icons.group_add),
+        ),
+        ListTile(
+          title: Text("Contacts"),
+          leading: Icon(Icons.contacts_rounded),
+          onTap: () {
+            Navigator.pushNamed(context, Cons.second);
+          },
+        )
+      ],
+    ),
+  );
+}
+
+Widget myCard(RECIPE food, BuildContext context) {
   return GestureDetector(
     onTap: () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Details(),
-        ),
-      );
+      Navigator.pushNamed(context, Cons.details, arguments: {'recipe': food});
     },
     child: Card(
       margin: const EdgeInsets.all(8),
@@ -73,7 +98,7 @@ Widget myCard(RECIPE recipe, BuildContext context) {
             margin: const EdgeInsets.all(16),
             color: Colors.white,
             child: Image(
-              image: AssetImage(recipe.imageURL),
+              image: AssetImage(food.imageURL),
               fit: BoxFit.cover,
               width: double.infinity,
               height: 200,
@@ -82,14 +107,14 @@ Widget myCard(RECIPE recipe, BuildContext context) {
           Padding(
             padding: const EdgeInsets.all(2.0),
             child: Text(
-              recipe.title,
+              food.title,
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(2.0),
             child: Text(
-              recipe.cost,
+              food.cost,
               style:
                   const TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
             ),
@@ -97,7 +122,7 @@ Widget myCard(RECIPE recipe, BuildContext context) {
           Padding(
             padding: const EdgeInsets.all(2.0),
             child: Text(
-              recipe.ingrediant,
+              food.ingrediant,
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
           )
