@@ -10,19 +10,43 @@ class SecondPage extends StatelessWidget {
         backgroundColor: Colors.grey.shade300,
         title: const Text('RECIPE APP'),
       ),
-      body: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            height: 600,
-            width: 400,
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(
+      body: GestureDetector(
+        onTap: () {
+          final snackbar = SnackBar(
+            content: const Text('HELLO How are you'),
+            action: SnackBarAction(
+              label: 'OK',
+              onPressed: () {
+                ScaffoldMessenger.of(context).hideCurrentSnackBar();
+              },
+            ),
+          );
+          ScaffoldMessenger.of(context).showSnackBar(snackbar);
+        },
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                height: 120,
+                width: 120,
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
                     begin: Alignment.centerRight,
                     end: Alignment.topLeft,
-                    colors: [Colors.blue, Colors.black, Colors.red])),
+                    colors: [Colors.blue, Colors.black, Colors.red],
+                  ),
+                ),
+                child: const Center(
+                  child: Text(
+                    'Button',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
