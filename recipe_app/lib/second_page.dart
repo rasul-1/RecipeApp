@@ -21,7 +21,7 @@ class SecondPage extends StatelessWidget {
                 gradient:LinearGradient(
                   begin: Alignment.centerRight,
                   end: Alignment.topLeft,
-                  colors: [Colors.blue,Colors.red]) 
+                  colors: [Colors.blue,Colors.black,Colors.red]) 
               ),
             ),
           ),
