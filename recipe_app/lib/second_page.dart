@@ -6,19 +6,26 @@ class SecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
       appBar: AppBar(
         backgroundColor: Colors.grey.shade300,
-        title: const Text('Second Page'),
+        title: const Text('RECIPE APP'),
       ),
-      body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.all(70),
-          width: 400,
-          height: 200,
-          color: Colors.red,
-          child:const Text('HELLO'),
-        ),
+      body: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SafeArea(
+            child: Container(
+              height: 600,
+              width: 400,
+              decoration: const BoxDecoration(
+                gradient:LinearGradient(
+                  begin: Alignment.centerRight,
+                  end: Alignment.topLeft,
+                  colors: [Colors.blue,Colors.red]) 
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
