@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        Cons.home:(context)=>HomePage(),
+        Cons.home:(context)=> HomePage(),
         Cons.main:(context)=>MainScreen(),
         Cons.details:(context)=>Details(),
         Cons.second:(context)=>SecondPage(),

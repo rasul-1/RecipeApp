@@ -13,17 +13,14 @@ class SecondPage extends StatelessWidget {
       body: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SafeArea(
-            child: Container(
-              height: 600,
-              width: 400,
-              decoration: const BoxDecoration(
-                gradient:LinearGradient(
-                  begin: Alignment.centerRight,
-                  end: Alignment.topLeft,
-                  colors: [Colors.blue,Colors.black,Colors.red]) 
-              ),
-            ),
+          Container(
+            height: 600,
+            width: 400,
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.centerRight,
+                    end: Alignment.topLeft,
+                    colors: [Colors.blue, Colors.black, Colors.red])),
           ),
         ],
       ),

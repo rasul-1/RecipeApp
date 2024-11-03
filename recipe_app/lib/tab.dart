@@ -9,7 +9,7 @@ class MyTab extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('REcipe'),
+          title:const Text('REcipe'),
           bottom: const TabBar(
             isScrollable: true,
             tabs: [

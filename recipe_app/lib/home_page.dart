@@ -48,20 +48,20 @@ Widget myDrawer(BuildContext context) {
           decoration: BoxDecoration(color: Colors.blue.shade100),
           child: const Text('MENU'),
         ),
-        ListTile(
-          title: Text('My Account'),
+         const ListTile(
+          title: const Text('My Account'),
           leading: Icon(Icons.person),
         ),
         ListTile(
-          title: Text("Create a group"),
-          leading: Icon(Icons.group_add),
+          title:const Text("Create a group"),
+          leading:const Icon(Icons.group_add),
           onTap: (){
             Navigator.pushNamed(context, Cons.tab);
           },
         ),
         ListTile(
-          title: Text("Contacts"),
-          leading: Icon(Icons.contacts_rounded),
+          title:const Text("Contacts"),
+          leading:const Icon(Icons.contacts_rounded),
           onTap: () {
             Navigator.pushNamed(context, Cons.second);
           },
