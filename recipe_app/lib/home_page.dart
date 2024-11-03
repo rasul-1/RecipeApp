@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:recipe_app/cons.dart';
 import 'models.dart';
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
   static List<RECIPE> list = [
     RECIPE("Palov", "Price:10\$", 'assets/images/palov.jpeg',
         'Meat,Carrots,Onion,Rice'),
@@ -34,22 +34,7 @@ class MyHomePage extends StatelessWidget {
           return myCard(list[index], context);
         },
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            label: 'HOME',
-            icon: Icon(Icons.home),
-          ),
-          BottomNavigationBarItem(
-            label: 'SEARCH',
-            icon: Icon(Icons.search),
-          ),
-          BottomNavigationBarItem(
-            label: 'FAVORITES',
-            icon: Icon(Icons.favorite_sharp),
-          ),
-        ],
-      ),
+      
     );
   }
 }
@@ -70,6 +55,9 @@ Widget myDrawer(BuildContext context) {
         ListTile(
           title: Text("Create a group"),
           leading: Icon(Icons.group_add),
+          onTap: (){
+            Navigator.pushNamed(context, Cons.tab);
+          },
         ),
         ListTile(
           title: Text("Contacts"),

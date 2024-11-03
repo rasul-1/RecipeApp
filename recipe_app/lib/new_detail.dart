@@ -74,7 +74,7 @@ class Details extends StatelessWidget {
           ),
           OutlinedButton(
             onPressed: () {
-              Navigator.popAndPushNamed(context, Cons.hOME);
+              Navigator.popAndPushNamed(context, Cons.main);
             },
             child:const Text("No"),
           ),
