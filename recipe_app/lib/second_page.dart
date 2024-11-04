@@ -28,8 +28,8 @@ class SecondPage extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                height: 120,
-                width: 120,
+                height: 60,
+                width: 140,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.centerRight,
