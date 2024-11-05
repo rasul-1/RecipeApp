@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_app/input_page.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({super.key});
@@ -44,6 +45,22 @@ class SecondPage extends StatelessWidget {
                   ),
                 ),
               ),
+              Container(
+                width: 140,
+                height: 60,
+                color: Colors.blue.shade100,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => InputPage(),
+                      ),
+                    );
+                  },
+                  child: const Text('Sign Up'),
+                ),
+              )
             ],
           ),
         ),

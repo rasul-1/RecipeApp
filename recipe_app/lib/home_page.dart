@@ -49,7 +49,7 @@ Widget myDrawer(BuildContext context) {
           child: const Text('MENU'),
         ),
          const ListTile(
-          title: const Text('My Account'),
+          title:  Text('My Account'),
           leading: Icon(Icons.person),
         ),
         ListTile(
