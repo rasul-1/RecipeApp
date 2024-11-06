@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_app/menu.dart';
 
 class InputPage extends StatelessWidget {
   const InputPage({super.key});
@@ -33,7 +34,6 @@ class InputPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  
                   const Text(
                     'NeedFood',
                     style: TextStyle(fontSize: 30, color: Colors.white),
@@ -108,7 +108,14 @@ class InputPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 12.0),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Menu(),
+                    ),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 160, vertical: 12),
@@ -128,38 +135,45 @@ class InputPage extends StatelessWidget {
                   width: 100,
                   image: AssetImage('assets/images/fast.jpg'),
                 ),
-                SizedBox(width: 80,),
+                SizedBox(
+                  width: 80,
+                ),
                 Image(
                   height: 74,
                   width: 74,
                   image: AssetImage('assets/images/pizza.jpg'),
                 ),
-                SizedBox(width: 40,)
-                
+                SizedBox(
+                  width: 40,
+                )
               ],
             ),
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(width: 40,),
+                SizedBox(
+                  width: 40,
+                ),
                 Image(
-                  
                   height: 100,
                   width: 80,
                   image: AssetImage('assets/images/salad.jpg'),
                 ),
-                SizedBox(width: 80,),
+                SizedBox(
+                  width: 80,
+                ),
                 Image(
                   height: 74,
                   width: 74,
                   image: AssetImage('assets/images/platter.jpg'),
                 ),
-                
-                
               ],
             ),
             Text('No account yet?'),
-            Text('Sign up now',style:TextStyle(color: Colors.blue) ,)
+            Text(
+              'Sign up now',
+              style: TextStyle(color: Colors.blue),
+            )
           ],
         ),
       ),
