@@ -33,8 +33,8 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(Icons.search),
           ),
           BottomNavigationBarItem(
-            label: 'FAVORITES',
-            icon: Icon(Icons.favorite_sharp),
+            label: 'Login',
+            icon: Icon(Icons.login),
           ),
         ],
         currentIndex: sellectedPage,
