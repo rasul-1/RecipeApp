@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:sz_fancy_bottom_navigation/sz_fancy_bottom_navigation.dart';
 
-class Menu extends StatelessWidget {
+class Menu extends StatefulWidget {
   const Menu({super.key});
 
+  @override
+  State<Menu> createState() => _MenuState();
+  
+}
+
+class _MenuState extends State<Menu> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,6 +21,11 @@ class Menu extends StatelessWidget {
           TabData(iconData: Icons.search, title: 'SEARCH'),
           TabData(iconData: Icons.favorite, title: 'Favorite')
         ],
+        onTabChangedListener: (int position) {
+          setState(() {
+            
+          });
+        },
       ),
     );
   }
