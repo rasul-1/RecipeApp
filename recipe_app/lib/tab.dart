@@ -5,16 +5,20 @@ class MyTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MediaQueryData mediaQueryData=MediaQuery.of(context);
+    var size=mediaQueryData.size;
+    var orientaion=mediaQueryData.orientation;
     return DefaultTabController(
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title:const Text('REcipe'),
+          title: const Text('REcipe'),
           bottom: const TabBar(
             isScrollable: true,
             tabs: [
               Tab(
                 text: "Hello",
+                icon: Icon(Icons.home),
               ),
               Tab(
                 text: "How are you",
@@ -25,12 +29,22 @@ class MyTab extends StatelessWidget {
             ],
           ),
         ),
-        body: const TabBarView(
-          
+        body: TabBarView(
+          physics: ScrollPhysics(),
           children: [
-            Text('First'),
-            Text('Second'),
-            Text('third'),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  height: size.height*0.30,
+                  width: double.infinity,
+                  color: Colors.blue,
+                  child: const Text('First'),
+                ),
+              ],
+            ),
+            const Text('Second'),
+            const Text('third'),
           ],
         ),
       ),

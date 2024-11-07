@@ -72,6 +72,7 @@ Widget myDrawer(BuildContext context) {
 }
 
 Widget myCard(RECIPE food, BuildContext context) {
+  
   return GestureDetector(
     onTap: () {
       Navigator.pushNamed(context, Cons.details, arguments: {'recipe': food});

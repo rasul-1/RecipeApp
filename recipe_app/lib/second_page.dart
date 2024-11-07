@@ -61,7 +61,9 @@ class SecondPage extends StatelessWidget {
                   child: const Text('Sign Up'),
                 ),
               )
+            
             ],
+            
           ),
         ),
       ),
