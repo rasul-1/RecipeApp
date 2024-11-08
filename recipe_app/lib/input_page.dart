@@ -170,9 +170,14 @@ class InputPage extends StatelessWidget {
               ],
             ),
             Text('No account yet?'),
-            Text(
-              'Sign up now',
-              style: TextStyle(color: Colors.blue),
+            GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: const Text(
+                'Sign up now',
+                style: TextStyle(color: Colors.blue),
+              ),
             )
           ],
         ),
