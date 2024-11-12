@@ -60,8 +60,8 @@ Widget myDrawer(BuildContext context) {
           },
         ),
         ListTile(
-          title:const Text("Contacts"),
-          leading:const Icon(Icons.contacts_rounded),
+          title:const Text("LOGIN"),
+          leading:const Icon(Icons.login_outlined),
           onTap: () {
             Navigator.pushNamed(context, Cons.second);
           },
