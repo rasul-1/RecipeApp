@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'RECipe',
-      theme:ThemeData(primaryColor:Colors.grey.shade800,fontFamily: 'Sevillana') ,
+      theme:ThemeData(primaryColor:Colors.blue,fontFamily: 'Sevillana') ,
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {

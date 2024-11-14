@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/menu.dart';
+import 'package:recipe_app/onboard/main_board.dart';
 
 class InputPage extends StatelessWidget {
   const InputPage({super.key});
@@ -112,7 +113,7 @@ class InputPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Menu(),
+                      builder: (context) => MainBoard(),
                     ),
                   );
                 },
